@@ -1,0 +1,10 @@
+C:\Users\artch\source\repos\Шифрующие таблицы\Шифрующие таблицы\bin\Debug\Шифрующие таблицы.exe.config
+C:\Users\artch\source\repos\Шифрующие таблицы\Шифрующие таблицы\bin\Debug\Шифрующие таблицы.exe
+C:\Users\artch\source\repos\Шифрующие таблицы\Шифрующие таблицы\bin\Debug\Шифрующие таблицы.pdb
+C:\Users\artch\source\repos\Шифрующие таблицы\Шифрующие таблицы\obj\Debug\Шифрующие таблицы.csprojResolveAssemblyReference.cache
+C:\Users\artch\source\repos\Шифрующие таблицы\Шифрующие таблицы\obj\Debug\Шифрующие_таблицы.Form1.resources
+C:\Users\artch\source\repos\Шифрующие таблицы\Шифрующие таблицы\obj\Debug\Шифрующие_таблицы.Properties.Resources.resources
+C:\Users\artch\source\repos\Шифрующие таблицы\Шифрующие таблицы\obj\Debug\Шифрующие таблицы.csproj.GenerateResource.cache
+C:\Users\artch\source\repos\Шифрующие таблицы\Шифрующие таблицы\obj\Debug\Шифрующие таблицы.csproj.CoreCompileInputs.cache
+C:\Users\artch\source\repos\Шифрующие таблицы\Шифрующие таблицы\obj\Debug\Шифрующие таблицы.exe
+C:\Users\artch\source\repos\Шифрующие таблицы\Шифрующие таблицы\obj\Debug\Шифрующие таблицы.pdb
