@@ -132,9 +132,10 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(425, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 13);
+            this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Полученный текстъ";
+            this.label3.Text = "Полученный текст";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // openFileDialog1
             // 
@@ -154,10 +155,11 @@
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 9);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 9);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(775, 400);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 400);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Form1
             // 

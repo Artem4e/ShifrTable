@@ -24,10 +24,13 @@ namespace Шифрующие_таблицы
         public int key = 0;
         public string text = "";
         public int leng = 0;
+        public bool A = false;
+        public bool D = false; //Переменная, определяющая производилось ли какое-либо действие
 
         //Функция дешифрования\шифрования
         public string TransformationText(int k, bool Sh)
         {
+            A = Sh;
             string text2 = "";
             int l = 0;
             for (int j=0; j<k; j++)
@@ -43,6 +46,7 @@ namespace Шифрующие_таблицы
                     }
                 }
             }
+            D = true;
             return text2;
         }
 
@@ -54,15 +58,15 @@ namespace Шифрующие_таблицы
                 key = int.Parse(textBox1.Text);
                 text = textBox2.Text.Replace(" ", string.Empty).Replace("\r\n", string.Empty).ToUpper();
                 leng = text.Length;
-                if (leng < key)
+                if (leng < key || key<1)
                 {
-                    MessageBox.Show("Ключ должен быть меньше длины строки", "Ошибка");
+                    MessageBox.Show("Ключ должен быть меньше длины строки, но больше единицы.", "Ошибка!");
                     return true;
                 }
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ключ должен быть натуральным числом", "Ошибка");
+                MessageBox.Show("Ключ должен быть натуральным числом.", "Ошибка!");
                 return true;
             }
             return false;
@@ -132,30 +136,68 @@ namespace Шифрующие_таблицы
         //Таблица
         private void button5_Click(object sender, EventArgs e)
         {
-            if (!dataGridView1.Visible)
+            if (D)
             {
-                dataGridView1.Columns.Clear();
-                dataGridView1.Rows.Clear();
-                dataGridView1.Visible = true;
-                button5.Text = "Скрыть таблицу";
-                button3.Visible = false;
-                button4.Visible = false;
-                int l = 0;
-                if (leng % key == 0) l = leng / key;
-                else l = leng / key + 1;
-                for(int i=0; i<key; i++)
+                if (!dataGridView1.Visible)
                 {
-                    dataGridView1.Columns.Add("", i + 1.ToString());
+                    dataGridView1.Columns.Clear();
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Visible = true;
+                    button5.Text = "Скрыть таблицу";
+                    button3.Visible = false;
+                    button4.Visible = false;
+                    int l = 0;
+                    if (leng % key == 0) l = leng / key;
+                    else l = leng / key + 1;
+                    int z = 0;
+                    if (A)
+                    {
+                        z = key;
+                        key = l;
+                        l = z;
+                    }
+                    for (int i = 0; i < key; i++)
+                    {
+                        dataGridView1.Columns.Add("", i + 1.ToString());
+                    }
+                    for (int i = 0; i < l; i++)
+                        dataGridView1.Rows.Add();
+                    int h = 0;
+                    for (int i = 0; i < key; i++)
+                    {
+                        for (int j = 0; j < l; j++)
+                        {
+                            if (h < leng)
+                            {
+                                dataGridView1.Rows[j].Cells[i].Value = text[h];
+                                h++;
+                            }
+                            else break;
+                        }
+                    }
+                    dataGridView1.RowHeadersVisible = false;
+                    dataGridView1.ColumnHeadersVisible = false;
+                    dataGridView1.AllowUserToAddRows = false;
                 }
+                else
+                {
+                    dataGridView1.Visible = false;
+                    button3.Visible = true;
+                    button4.Visible = true;
+                    button5.Text = "Открыть таблицу";
+                }
+            }
+            else MessageBox.Show("Сначала зашифруйте/Дешифруйте текст!", "Ошибка!");
+        }
 
-            }
-            else
-            {
-                dataGridView1.Visible = false;
-                button3.Visible = true;
-                button4.Visible = true;
-                button5.Text = "Открыть таблицу";
-            }
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
